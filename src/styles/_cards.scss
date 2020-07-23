@@ -1,0 +1,280 @@
+@mixin flexCenter {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.cards {
+    width: 100%;
+    flex-wrap: wrap;
+    @include flexCenter();
+}
+
+.card {
+    min-width: 320px;
+    /* height: 700px; */
+    border: 1px solid $border-color;
+    background-color: $button-color;
+    border-radius: 5px;
+    padding: 13px 0 6px 0;
+    margin-bottom: 30px;
+}
+
+.card-inside-top {
+    border-radius: 5px 5px 0 0;
+    background-color: $light-color;
+    text-align: center;
+    color: $info-color;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 30px 20px;
+}
+
+.card-inside-middle {
+    background-color: $light-color;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    color: $text-color;
+    font-size: 13px;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.card-inside-bottom {
+    border-radius: 0 0 5px 5px;
+    background-color: $light-color;
+    padding: 20px;
+    ul {
+        list-style: none;
+        font-size: 16px;
+        color: $text-color;
+        padding: 0 10px;
+        li {
+            margin: 0 0 15px 0;
+        }
+    }
+}
+
+.underlined {
+    border-bottom: 1px dashed $highlight-color;
+    padding: 2px 0;
+    cursor: help;
+}
+
+.underlined:hover .tooltip,
+.help:hover+.tooltip {
+    /* display: block; */
+    opacity: 1;
+    visibility: visible;
+}
+
+.plans {
+    background-color: $bg-page;
+}
+
+.old-price {
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.new-price {
+    font-weight: bold;
+}
+
+.mensal-price {
+    color: $info-color;
+    font-size: 20px;
+}
+
+.mensal-price-value {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.free-domain {
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+.economy {
+    font-size: 14px;
+    color: $info-color;
+}
+
+.off {
+    border-radius: 50px;
+    background-color: $bg-bagde;
+    color: $light-color;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 6px;
+}
+
+a.button-contract {
+    background-color: $button-color;
+    border-radius: 25px;
+    padding: 12px 45px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: $light-color;
+    transition: 0.4s;
+    &:hover {
+        background-color: #FF7F2F;
+    }
+}
+
+.button {
+    height: 100px;
+}
+
+.stronger-text {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.prices {
+    margin-bottom: 40px;
+}
+
+.tooltip {
+    background: #eee;
+    margin-left: 28px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    width: 200px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity .5s;
+    border: 1px solid $text-header-color;
+    visibility: hidden;
+    font-weight: normal;
+}
+
+.help {
+    cursor: help;
+}
+
+.period-title {
+    color: $info-color;
+    text-align: center;
+    font-size: 14px;
+}
+
+.period {
+    padding: 30px 0;
+    width: 100%;
+    /* flex-wrap: wrap; */
+}
+
+.period-selector {
+    @include flexCenter();
+}
+
+.period-selector-radius {
+    border-radius: 25px;
+    border: 1px solid #4480C5;
+    box-shadow: 0px 2px 4px #4480C570;
+    /* padding: 10px; */
+    margin: 15px;
+    min-width: 320px;
+    display: flex;
+    background-color: $light-color;
+}
+
+.period-selector-1 {
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: $bg-radius;
+    padding: 10px;
+    color: $light-color;
+    width: 33.3333%;
+}
+
+.period-selector-2,
+.period-selector-3 {
+    border-radius: 25px;
+    padding: 10px;
+    width: 33.3333%;
+    color: $info-color;
+}
+
+.container,
+.container-blue {
+    display: block;
+    position: relative;
+    padding-left: 26px;
+    /* margin-bottom: 12px; */
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input,
+.container-blue input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark,
+.checkmark-blue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.checkmark {
+    background-color: $light-color;
+    border: 2px solid $text-header-color;
+}
+
+.checkmark-blue {
+    background-color: $light-color;
+    border: 2px solid $light-color;
+}
+
+.container:hover input~.checkmark,
+.container-blue:hover input~.checkmark-blue {
+    background-color: #ccc;
+}
+
+.container input:checked~.checkmark {
+    background-color: $bg-radius;
+}
+
+.container-blue input:checked~.checkmark-blue {
+    background-color: $bg-radius;
+}
+
+.checkmark:after,
+.checkmark-blue:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked~.checkmark:after,
+.container-blue input:checked~.checkmark-blue:after {
+    display: block;
+}
+
+.container .checkmark:after,
+.container-blue .checkmark-blue:after {
+    top: 3px;
+    left: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $light-color;
+}
