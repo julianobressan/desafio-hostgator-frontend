@@ -2,6 +2,8 @@
 
 This is the frontend of the Desafio. It was developed with React, enhanced with SASS and ESLint.
 
+![Frontend](front.png?raw=true "Frontend")
+
 ## Instructions
 
 To run the project, first run the backend, following the instructions in https://github.com/julianobressan/desafio-hostgator-backend. After this, follow the steps bellow:
