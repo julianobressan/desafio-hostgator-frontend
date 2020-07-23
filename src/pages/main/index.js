@@ -19,7 +19,7 @@ export default class Main extends Component {
 
   loadCycles = async (periodicity) => {
       console.log(periodicity);
-    const response = await api.get("/prices/5");
+    const response = await api.get("/prices/6");
     this.setState({
       plan: response.data,
       monthly: response.data.cycles.monthly,
